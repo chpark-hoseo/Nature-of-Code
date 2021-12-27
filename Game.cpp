@@ -1,8 +1,7 @@
 #include "Game.h"
 #include "InputHandler.h"
 
-
-Game* Game::s_pInstance = 0;
+  Game* Game::s_pInstance = 0;
 
 bool Game::init(const char *title, int xpos, int ypos, int width, int height, int flags) 
 {
