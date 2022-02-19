@@ -2,9 +2,12 @@
 
 #include "usr/include/SDL2/SDL.h"
 #include "usr/include/SDL2/SDL2_gfxPrimitives.h"
-#include "Walker.h"
+#include "usr/include/SDL2/SDL_image.h"
 
 #include <vector>
+
+
+class Walker;
 
 class Game {
 private:
@@ -25,22 +28,20 @@ public:
     ~Game() {}
 
     bool init(const char *title, int xpos, int ypos, int width, int height, int flags);
+    bool setup();
     void render();
     void update(); 
     bool running();
     void handleEvents();
     void clean();
     void quit() { m_bRunning = false; }
+
 private:
     SDL_Window* m_pWindow;
     SDL_Renderer* m_pRenderer;
     bool m_bRunning;
 
-    int m_currentFrame; 
-
     Walker* _walker;
-
-   // std::vector<GameObject*> m_gameObjects;
 };
 
 typedef Game TheGame;

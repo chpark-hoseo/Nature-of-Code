@@ -1,16 +1,12 @@
-#include "Game.h"
+#include "Game.h" 
 #include <iostream>
 
 const int FPS = 60;
 const int DELAY_TIME = 1000.0f / FPS;
 
-#define WIDTH (800)
-#define HEIGHT (600)
-
 int main(int argc, char* argv[])
 {
-  if (TheGame::Instance()->init("Nature of Code", 
-               0, 0, 640, 480, false)) 
+  if (TheGame::Instance()->setup() ) 
   {
     Uint32 frameStart, frameTime;
     while (TheGame::Instance()->running()) {
