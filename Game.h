@@ -10,6 +10,8 @@ class Vehicle;
 class Walker;
 class Vector2D;
 
+
+
 class Game {
 private:
     Game() {}
@@ -43,8 +45,11 @@ private:
     bool m_bRunning;
 
     Walker* _walker;
+<<<<<<< HEAD
     Vehicle* mVehicle;
     Vector2D* target;
+=======
+>>>>>>> origin/main
 };
 
 typedef Game TheGame;

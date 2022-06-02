@@ -9,6 +9,43 @@ public:
     float getY() { return m_y; }
     void setX(float x) { m_x = x; }
     void setY(float y) { m_y = y; }
+    void limit(float max) // 추가: max 값을 넘었다면 길이를 max 값으로 보정
+    {
+      float l = length();
+      if (l > 0)
+      {
+        if (l > max)
+        {
+          (*this) *= 1 / l;
+          (*this) *= max;
+        }
+      }
+    }
+    
+    // 내적 연산
+    static float dot(const Vector2D& v1, const Vector2D& v2)
+    {
+      Vector2D vn1 = v1;
+      vn1.normalize();
+      Vector2D vn2 = v2;
+      vn2.normalize();
+
+      float vn = vn1.m_x * vn2.m_x + vn1.m_y + vn2.m_y;
+      
+      return vn;
+    }
+
+    static float cross(const Vector2D& v1, const Vector2D& v2)
+    {
+      Vector2D vn1 = v1;
+      vn1.normalize();
+      Vector2D vn2 = v2;
+      vn2.normalize();
+
+      float vn = vn1.m_x * vn2.m_y - vn2.m_x * vn1.m_y;
+
+      return vn;
+    }
 
     float length() { return sqrt(m_x * m_x + m_y * m_y); }
 

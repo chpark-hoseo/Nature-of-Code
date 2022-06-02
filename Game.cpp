@@ -5,7 +5,10 @@
 #include "InputHandler.h"
 
 #include "Walker.h"
+//<<<<<<< HEAD
 #include "Vehicle.h"
+=======
+//>>>>>>> origin/main
 
 Game* Game::s_pInstance = 0;
 
@@ -15,24 +18,33 @@ bool Game::setup()
 
   result = init("Nature of Code", 0, 0, WIDTH, HEIGHT, false);
 
+<<<<<<< HEAD
   //_walker = new Walker(WIDTH/2,HEIGHT/2);
   mVehicle = new Vehicle(100, 100);
+=======
+  _walker = new Walker(WIDTH/2,HEIGHT/2);
+>>>>>>> origin/main
 
   return result;
 }
 
 void Game::update()
 {
+<<<<<<< HEAD
   //_walker->update();
 
   target = TheInputHandler::Instance()->getMousePosition();
   Vector2D steering = mVehicle->arrive(*target);
   mVehicle->applyForce(steering);
   mVehicle->update();
+//=======
+  _walker->update();
+>>>>>>> origin/main
 }
       
 void Game::render()
 {
+<<<<<<< HEAD
   SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 255);
   SDL_RenderClear(m_pRenderer);
 
@@ -40,6 +52,11 @@ void Game::render()
   filledCircleRGBA(m_pRenderer, target->getX(), target->getY(), 32, 255, 0, 0, 255);
   
   mVehicle->show();
+=======
+ // SDL_RenderClear(m_pRenderer);  
+
+  _walker->draw(m_pRenderer);
+>>>>>>> origin/main
   
   SDL_RenderPresent(m_pRenderer); 
 
