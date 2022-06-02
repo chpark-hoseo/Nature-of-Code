@@ -6,11 +6,16 @@
 
 #include <vector>
 
+<<<<<<< HEAD
 class Vehicle;
 class Walker;
 class Vector2D;
 
 
+=======
+
+class Walker;
+>>>>>>> origin/main
 
 class Game {
 private:
@@ -45,8 +50,11 @@ private:
     bool m_bRunning;
 
     Walker* _walker;
+<<<<<<< HEAD
     Vehicle* mVehicle;
     Vector2D* target;
+=======
+>>>>>>> origin/main
 };
 
 typedef Game TheGame;

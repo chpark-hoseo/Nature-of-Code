@@ -5,8 +5,11 @@
 #include "InputHandler.h"
 
 #include "Walker.h"
+<<<<<<< HEAD
 #include "Vehicle.h"
 //>>>>>>> origin/main
+=======
+>>>>>>> origin/main
 
 Game* Game::s_pInstance = 0;
 
@@ -16,14 +19,19 @@ bool Game::setup()
 
   result = init("Nature of Code", 0, 0, WIDTH, HEIGHT, false);
 
+<<<<<<< HEAD
   //_walker = new Walker(WIDTH/2,HEIGHT/2);
   mVehicle = new Vehicle(100, 100);
+=======
+  _walker = new Walker(WIDTH/2,HEIGHT/2);
+>>>>>>> origin/main
 
   return result;
 }
 
 void Game::update()
 {
+<<<<<<< HEAD
   //_walker->update();
 
   target = TheInputHandler::Instance()->getMousePosition();
@@ -32,12 +40,23 @@ void Game::update()
   mVehicle->update();
 
 	//_walker->update();
+=======
+  _walker->update();
+>>>>>>> origin/main
 }
       
 void Game::render()
 {
+<<<<<<< HEAD
   SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, 255);
   SDL_RenderClear(m_pRenderer);
+=======
+ // SDL_RenderClear(m_pRenderer);  
+
+  _walker->draw(m_pRenderer);
+  
+  SDL_RenderPresent(m_pRenderer); 
+>>>>>>> origin/main
 
   //_walker->draw(m_pRenderer);
   filledCircleRGBA(m_pRenderer, target->getX(), target->getY(), 32, 255, 0, 0, 255);
@@ -45,6 +64,7 @@ void Game::render()
   mVehicle->show();
  // SDL_RenderClear(m_pRenderer);  
 
+<<<<<<< HEAD
 //  _walker->draw(m_pRenderer);
   
   SDL_RenderPresent(m_pRenderer); 
@@ -59,6 +79,17 @@ void Game::render()
   rect[0].w = 200;
   rect[0].h = 200;
 
+=======
+  // 사각형 그리기 
+  /*
+
+  SDL_Rect rect[2];
+  rect[0].x = 250;
+  rect[0].y = 150;
+  rect[0].w = 200;
+  rect[0].h = 200;
+
+>>>>>>> origin/main
   rect[1].x = 50;
   rect[1].y = 150;
   rect[1].w = 200;

@@ -7,6 +7,10 @@ std::random_device rd;
 // random_device 를 통해 난수 생성 엔진을 초기화 한다.
 std::mt19937 gen(rd());
 
+<<<<<<< HEAD
+=======
+// 0 부터 3까지 균등하게 나타나는 난수열을 생성하기 위해 균등 분포 정의.
+>>>>>>> origin/main
 std::uniform_int_distribution<int> dis(0, 3);
 
 Walker::Walker(int x, int y) 
@@ -17,7 +21,11 @@ Walker::Walker(int x, int y)
 
 void Walker::update() 
 {
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> origin/main
   const int choice = dis(gen);
 
   if (choice == 0) 
@@ -36,6 +44,10 @@ void Walker::update()
   {
     _y--;
   }
+<<<<<<< HEAD
+=======
+  
+>>>>>>> origin/main
 }
 
 void Walker::draw(SDL_Renderer* renderer)
